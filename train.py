@@ -37,8 +37,7 @@ training_args = TrainingArguments(
 trainer = Trainer(
     model=model,
     args=training_args,
-    train_dataset=tokenized_datasets["train"],
-    eval_dataset=tokenized_datasets["validation"],
+    train_dataset=tokenized_datasets,
 )
 
 # Train
@@ -47,4 +46,5 @@ trainer.train()
 prompt = "Extract order number and delivery date from: 'Thank you for your order #12345. Estimated delivery Aug 15.'"
 output = tokenizer.decode(model.generate(tokenizer(prompt, return_tensors="pt").input_ids, max_length=50)[0])
 print(output)
+
 
