@@ -1,8 +1,0 @@
-# environment.txt – dependencies to run Llama-3-8B via Transformers
-
-transformers>=4.43.0
-torch  # choose torch with GPU support if available
-accelerate
-safetensors
-huggingface_hub
-datasets
